@@ -6,7 +6,7 @@ def create_app():
     app = Flask(__name__)
 
     app.config.from_mapping(
-            SECRET_KEY='TH1S_K3Y-for_fl4sksession',
+            SECRET_KEY='fl4sks3ss1on',
             DATABASE_HOST=os.environ.get('FLASK_DATABASE_HOST'),
             DATABASE_PASSWORD=os.environ.get('FLASK_DATABASE_PASSWORD'),
             DATABASE_USER=os.environ.get('FLASK_DATABASE_USER'),
@@ -17,8 +17,12 @@ def create_app():
     db.init_app(app)
     
     from . import auth
-    app.register.blueprint(auth.b)
-
+    from . import todo
+    app.register_blueprint(auth.bp)
+    app.register_blueprint(todo.bp)
+    
+    
+    
     @app.route('/hola')
     def hola():
             return 'hola flask app'

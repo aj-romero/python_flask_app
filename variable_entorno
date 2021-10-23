@@ -1,0 +1,9 @@
+export FLASK_APP=todo
+export FLASK_DATABASE_HOST='localhost'
+export FLASK_DATABASE_PASSWORD='python_user'
+export FLASK_DATABASE_USER='python_user'
+export FLASK_DATABASE_PORT='33060'
+export FLASK_DATABASE='testing_python'
+
+export FLASK_ENV=development
+export FLASK_APP=todo
